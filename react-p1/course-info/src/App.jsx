@@ -14,6 +14,20 @@ import './App.css'
 //   const part3 = 'State of a component'
 //   const exercises3 = 14
 
+// const course = 'Half Stack application development' CASE 2
+// const part1 = {
+//   name: 'Fundamentals of React',
+//   exercises: 10
+// }
+// const part2 = {
+//   name: 'Using props to pass data',
+//   exercises: 7
+// }
+// const part3 = {
+//   name: 'State of a component',
+//   exercises: 14
+// }
+
 //   return (
 //     <div>
 //       <h1>{course}</h1>
@@ -46,9 +60,9 @@ export function Content (props) {
 
   return(
     <div>
-      <Part part={props.part1} />
-      <Part part={props.part2} />
-      <Part part={props.part3} />
+      <Part part={props.parts[0]} />
+      <Part part={props.parts[1]} />
+      <Part part={props.parts[2]} />
     </div>
   )
 }
@@ -72,22 +86,24 @@ export function Total (props) {
 //App Calling the created components with its props.
 const App = () => {
   const course = 'Half Stack application development'
-  const part1 = {
-    name: 'Fundamentals of React',
-    exercises: 10
-  }
-  const part2 = {
-    name: 'Using props to pass data',
-    exercises: 7
-  }
-  const part3 = {
-    name: 'State of a component',
-    exercises: 14
-  }
+  const parts = [
+    {
+      name: 'Fundamentals of React',
+      exercises: 10
+    },
+    {
+      name: 'Using props to pass data',
+      exercises: 7
+    },
+    {
+      name: 'State of a component',
+      exercises: 14
+    }
+  ]
   return (
     <div>
       <Header course={course} />
-      <Content part1={part1} part2={part2} part3={part3} />
+      <Content parts={parts} />
       <Total total={31}/>
     </div>
   )
